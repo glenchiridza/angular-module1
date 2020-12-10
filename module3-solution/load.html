@@ -1,8 +1,8 @@
 
   <ul>
   	<li ng-repeat="item in list.items">
-  		{{item.name}} , {{item.short_name}} , {{item.description}}
-  		<button class="btn btn-warning" ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+  		<p class="alert alert-info">{{item.name}} , {{item.short_name}} , {{item.description}}
+  		<button class="btn btn-warning" ng-click="list.onRemove({index: $index});">Don't want this one!</button></p>
   	</li>
   	<div class="alert alert-info" ng-if="list.emptyList()">Nothing found</div>
   <ul>
