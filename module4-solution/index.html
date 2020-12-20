@@ -3,23 +3,27 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Restaurant App</title>
   </head>
   <body>
+    <div class="container">
     <h1>Welcome to our Restaurant!!</h1>
 
     <ui-view></ui-view>
 
+  </div>
     <!-- Libraries -->
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
 
     <!-- Modules -->
-    <script src="menuApp/menuapp.module.js"></script>
-    <script src="menuApp/data.module.js"></script>
+
+    <script src="src/menuapp.module.js"></script>
+    <script src="src/data.module.js"></script>
 
     <!-- Routes -->
-    <script src="routes.js"></script>
+    <script src="src/route.js"></script>
 
     <!-- 'MenuApp' module artifacts -->
     <script src="src/menudata.controller.js"></script>

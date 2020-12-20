@@ -1,7 +1,6 @@
 (function(){
   'use strict';
 
-  angular.module('MenuApp',['ui-router']);
 
   angular.module('MenuApp')
   .config(RoutesConfig);
@@ -16,29 +15,30 @@
     $stateProvider
     .state('home', {
       url: '/',
-      templateUrl:'home.html'
+      templateUrl:'templates/home.templates.html'
     })
     //category route
     .state('categories', {
       url:'/categories',
+      templateUrl: 'templates/total_categories.template.html',
       controller:'MenuDataController as catCtrl',
       resolve : {
-        list: ['MenuDataService', function(MenuDataService) {
+        contents: ['MenuDataService', function(MenuDataService) {
           return MenuDataService.getAllCategories();
         }]
       }
     })
 
     .state('categories.items', {
-      url: 'items/category-{categoryName}',
-      templateUrl:'items.html',
-      controller: 'Itemscontroller as itemsCtrl',
+      url: '/items/category-{categoryName}',
+      templateUrl:'templates/total_items.template.html',
+      controller: 'ItemsController as itemsCtrl',
       resolve: {
-        items: ['MenuDataService', '$stateParams', function (MenuDataService){
+        items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams){
           return MenuDataService.getItemsForCategory($stateParams.categoryName);
         }]
       }
-    })
+    });
 
   }
 })();

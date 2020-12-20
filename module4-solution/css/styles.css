@@ -14,3 +14,11 @@ div.tabs {
 .activeTab {
   font-weight: bold;
 }
+
+
+categories {
+  font-size: 20px;
+  display: block;
+  list-style-type: none;
+
+}

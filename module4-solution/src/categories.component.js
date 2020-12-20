@@ -1,8 +1,8 @@
 (function(){
   'use strict';
 
-  angular.component('categories',{
-
+angular.module('MenuApp')
+.component('categories',{
 templateUrl: 'templates/categories.template.html',
 bindings: {
   contents: '<'

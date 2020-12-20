@@ -21,7 +21,7 @@
           service.contents = response.data;
           return service.contents;
         }
-      )
+      );
       return contents;
     };
 
@@ -29,14 +29,14 @@
 
       var items = $http({
         method: 'GET',
-        url: (ApiResource + 'menu_items.json?category=' + categoryName),
+        url: (ApiResource + 'menu_items.json?category=' + categoryName)
       })
       .then (
         function(response) {
           service.items = response.data;
           return service.items;
         }
-      )
+      );
 
       return items;
     };
